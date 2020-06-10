@@ -4,7 +4,7 @@
 #Instructions
 
 1. Clone the repo.
-2. Run "npm install"
+2. Run "npm install".
 3.Run "npx react-native run-android" (Android)
 
 
