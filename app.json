@@ -1,0 +1,17 @@
+{
+  "name": "demo-project",
+  "displayName": "demo-project",
+  "expo": {
+    "name": "demo-project",
+    "slug": "expo-template-bare",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
