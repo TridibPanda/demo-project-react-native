@@ -1,38 +1,47 @@
-import * as React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import React, {Component} from 'react';
+import {Button, View, Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
-const instructions = Platform.select({
-  ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
-  android: `Double tap R on your keyboard to reload,\nShake or press menu button for dev menu`,
-});
+import SignupScreen from './src/signup';
+import LoginScreen from './src/login';
+import Otp from './src/otp';
+import ForgotPassword from './src/forgotPassword';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>Welcome to React Native!</Text>
-      <Text style={styles.instructions}>To get started, edit App.js</Text>
-      <Text style={styles.instructions}>{instructions}</Text>
-      <Text style={styles.welcome}>Tridib</Text>
-    </View>
-  );
+
+const Stack = createStackNavigator();
+
+class App extends React.Component {
+  render() {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator>
+
+          <Stack.Screen
+            name="SignupScreen"
+            component={SignupScreen}
+            options={{headerShown: false}}
+          />
+            <Stack.Screen
+            name="LoginScreen"
+            component={LoginScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Otp"
+            component={Otp}
+            options={{headerShown: false}}
+          /> 
+           <Stack.Screen
+            name="ForgotPassword"
+            component={ForgotPassword}
+            options={{headerShown: false}}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-    color: 'red'
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+export default App;
